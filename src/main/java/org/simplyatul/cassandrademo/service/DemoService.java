@@ -22,16 +22,19 @@ SOFTWARE.
 
 */
 
-package org.simplyatul.cassandrademo;
+package org.simplyatul.cassandrademo.service;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import java.io.IOException;
 
-@SpringBootApplication
-public class CassandrademoApplication {
+import org.springframework.http.ResponseEntity;
 
-	public static void main(String[] args) {
-		SpringApplication.run(CassandrademoApplication.class, args);
-	}
+import com.fasterxml.jackson.databind.JsonNode;
 
+public interface DemoService {
+
+    ResponseEntity<?>
+        storeData(JsonNode inRequest);
+
+    ResponseEntity<?>
+        retrieveData(String guid) throws IOException;
 }

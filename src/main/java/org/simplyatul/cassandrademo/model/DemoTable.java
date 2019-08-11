@@ -22,16 +22,25 @@ SOFTWARE.
 
 */
 
-package org.simplyatul.cassandrademo;
+package org.simplyatul.cassandrademo.model;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.cassandra.core.mapping.PrimaryKey;
+import org.springframework.data.cassandra.core.mapping.Table;
 
-@SpringBootApplication
-public class CassandrademoApplication {
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NonNull;
 
-	public static void main(String[] args) {
-		SpringApplication.run(CassandrademoApplication.class, args);
-	}
+/*
+ * Maps to DemoTable in DB
+ */
+
+@Data
+@AllArgsConstructor
+@Table
+public class DemoTable {
+    @PrimaryKey
+    private @NonNull String guid;
+    private String content;
 
 }

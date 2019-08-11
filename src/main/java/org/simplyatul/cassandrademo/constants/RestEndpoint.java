@@ -22,16 +22,12 @@ SOFTWARE.
 
 */
 
-package org.simplyatul.cassandrademo;
+package org.simplyatul.cassandrademo.constants;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+public class RestEndpoint {
 
-@SpringBootApplication
-public class CassandrademoApplication {
-
-	public static void main(String[] args) {
-		SpringApplication.run(CassandrademoApplication.class, args);
-	}
+    public final static String API_PREFIX = "demo-ws";
+    public final static String API_VERSION = "/v1";
+    public final static String PARAMS = "/params";
 
 }
